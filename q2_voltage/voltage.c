@@ -17,8 +17,7 @@
  * @return 1 if valid, 0 if invalid
  */
 int is_valid_voltage(float voltage) {
-    // TODO: Implement voltage validation logic
-    return -1;  // Placeholder to fail all tests
+    return (voltage >= 1.8f && voltage <= 3.3f) ? 1 : 0;
 }
 
 #ifndef UNIT_TEST
@@ -32,9 +31,16 @@ int main(void) {
 
     // TODO: Read input and validate
     printf("Enter measured voltage: ");
-    // scanf("%f", &measured_voltage);  // Uncomment and use
+    scanf("%f", &measured_voltage);  // Uncomment and use
+	
+    if (is_valid_voltage(measured_voltage)){
+    	printf("Pass\n");
+    	return 0;
 
-    return 0;
+    } else {
+    	printf ("Fail\n");
+    	return 1;  // Placeholder to fail all tests
+    }
 }
 #endif
 

@@ -18,8 +18,8 @@
  * @return Calculated power in watts
  */
 float calculate_power(float voltage, float current) {
-    // TODO: Implement power calculation
-    return 0.0f;  // Placeholder
+    float power = voltage * current;
+    return (power);  // Placeholder    
 }
 
 /**
@@ -29,7 +29,7 @@ float calculate_power(float voltage, float current) {
  */
 int is_valid_power(float power) {
     // TODO: Implement power validation logic
-    return 0;  // Placeholder
+    return (power <= 5.0f) ? 1 : 0;  // Placeholder
 }
 
 #ifndef UNIT_TEST
@@ -42,6 +42,23 @@ int main(void) {
 
     // TODO: Read voltage and current, calculate power, and validate
     // Read voltage and current, calculate power, and validate
+	
+    printf("Please enter voltage:");
+    scanf("%f", &voltage);
+
+    printf("Please enter current:");
+    scanf("%f", &current);
+	
+    power = calculate_power(voltage,current);
+    
+    printf ("Calculated Power: %.2fW\n", power); 
+    if (is_valid_power(power)) {
+	    printf ("Success\n"); 
+    } else {
+	    printf ("Fail\n");
+      	    float excessive_power = power - max_power;
+            printf ("Excessive power:%.2fW\n", excessive_power);
+    }
 
     return 0;
 }
