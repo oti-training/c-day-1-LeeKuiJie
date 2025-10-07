@@ -57,7 +57,7 @@ int main(void) {
     } else {
 	    printf ("Fail\n");
       	    float excessive_power = power - max_power;
-            printf ("Excessive power:%.2fW\n", excessive_power);
+            printf ("Excessive Power:%.2fW\n", excessive_power);
     }
 
     return 0;
